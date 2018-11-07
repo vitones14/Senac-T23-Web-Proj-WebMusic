@@ -12,3 +12,4 @@ This project was build with the intentions of show news about music and singers 
 
 ![](https://raw.githubusercontent.com/vitones14/Senac-T23-Web-Proj-WebMusic/master/img1.png)
 
+https://trabson-rjaivzrhkp.now.sh/
