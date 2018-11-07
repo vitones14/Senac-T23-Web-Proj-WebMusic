@@ -10,3 +10,5 @@ This project was build with the intentions of show news about music and singers 
 - open the project folder
 - open the index.html file
 
+![](https://raw.githubusercontent.com/vitones14/Senac-T23-Web-Proj-WebMusic/master/img1.png)
+
