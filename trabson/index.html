@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>site de musiquinhas</title>
+
+    <style>
+        #webmusic {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 60px;
+            width: 100px;
+            height: 100%;
+            color: whitesmoke;
+            padding-left: 60px;
+        }
+
+        #header {
+            background-color: black;
+            max-width: 100%;
+            height: 250px;
+
+
+        }
+
+        #topicos {
+
+            font-size: 20px;
+            color: whitesmoke;
+            padding-top: 130px;
+
+        }
+
+        .clearfix::after {
+            content: "";
+            margin-top: 80px;
+            clear: both;
+            display: table;
+        }
+
+        .topicos li {
+
+            display: inline;
+            padding: 100px;
+
+        }
+
+        a:visited,
+        a:active,
+        a:hover,
+        a:focus,
+        a:focus-within,
+        a {
+            color: white;
+            text-decoration: unset;
+
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        #lele {
+
+            margin-top: 50px;
+
+        }
+
+        .container-images>div {
+            display: inline-block;
+        }
+
+        #musicas {
+            font-size: 18px;
+            font-style: italic;
+            font-weight: bold;
+            margin-top: 50px;
+            font-family: Arial, Helvetica, sans-serif;
+            padding-left: 60px;
+        }
+
+        #musicas1 {
+
+            color: black;
+        }
+    </style>
+
+</head>
+
+<body onload="carregajavascript()">
+
+
+
+
+    <audio id="audio" controls loop autoplay="true">
+
+
+        <source src="./Som de Fundo para Videos.mp3" type="audio/mpeg"> Your browser does not support the audio element.
+    </audio>
+
+    <header id="header">
+
+        <span id="webmusic">Web Music</span>
+        <img style="height: 50px;" src="./guitarra.png" alt="">
+
+        <div id="topicos" class="topicos">
+            <ul>
+                <li>
+                    <a href="">Noticias</a></li>
+                <li>
+                    <a href="">Lançamentos</a></li>
+                <li>
+                    <a href="">Top 10 Artistas e Musicas</a></li>
+                <li>
+                    <a href="./jogos.html">Trila sonora dos games</a></li>
+            </ul>
+        </div>
+
+
+        <div class="container-images" style="width:75%; margin-left:15%;margin-top: 80px;">
+
+            <div style="width:30%;margin-right: 15px;">
+                <img style="width:100%" src="./02-chester-bennington-bw-portrait-2009-a-billboard-1548.jpg">
+
+                <p style="font-weight:bold;"> Chester Bennington ex-vocalista da banda Link Park , responsavel por milhoes
+                    de copias vendidas por todo o mundo.</p>
+            </div>
+
+            <div style="width:30%;margin-right: 15px;">
+                <img style="width:100%" src="./justinzinho.jpg">
+                <p style="font-weight:bold;"> Justin Timberlake vem ao brasil em 2019 para fazer 3 shows, 1 no Rio de Janeiro
+                    outro em São Paulo e outro esta para ser confirmado.</p>
+            </div>
+
+            <div style="width:30%;margin-right: 15px;">
+                <img style="width:100%" src="./Eminem.jpg">
+                <p style="font-weight:bold;"> Eminem se torna o unico musico com 9 albuns consecutivos nos topos das paradas
+                    da billboard, rapper ultrapassou led zeppelin e Abba com novo disco kamikaze.</p>
+
+            </div>
+
+        </div>
+
+        <div id="musicas">
+            <h1 style="font-weight:bold; font-size: 25px;">Top 10 musicas mais tocadas do mês</h1>
+
+
+            <li><a id="musicas1" href="https://www.youtube.com/watch?v=LeiFF0gvqcc">1- Remember the time(Michael Jackson)</a></li>
+            <li><a id="musicas1" href="https://www.youtube.com/watch?v=8kYkciD9VjU">2- Superman (Eminem)</a></li>
+            <li> <a id="musicas1" href="https://www.youtube.com/watch?v=uuZE_IRwLNI">3 - Mirrors (Justin Timberlake)</a></li>
+            <li> <a id="musicas1" href="https://www.youtube.com/watch?v=FynZChaDqQs">4 - Complicated (Avril Lavigne)</a></li>
+            <li> <a id="musicas1" href="https://www.youtube.com/watch?v=vabnZ9-ex7o">5 - Come as you are (Nirvana)</a></li>
+            <li> <a id="musicas1" href="https://www.youtube.com/watch?v=r5EXKDlf44M">6 - Boulevard of Broken Dreams (Green
+                    Day)
+                </a></li>
+            <li> <a id="musicas1" href="https://www.youtube.com/watch?v=ToHo29kD9Go">7 - A light that never comes(Link Park)</a></li>
+            <li> <a id="musicas1" href="https://www.youtube.com/watch?v=YlUKcNNmywk">8 - Californication(Red Hot Chili Peppers)</a></li>
+            <li> <a id="musicas1" href="https://www.youtube.com/watch?v=WM8bTdBs-cw">9 - One(Metallica)</a></li>
+            <li> <a id="musicas1" href="https://www.youtube.com/watch?v=_Yhyp-_hX2s">10 - Eminem (Lose Yourself)</a></li>
+
+
+
+
+
+
+
+        </div>
+
+    </header>
+
+    <script>
+
+        function carregajavascript() {
+
+
+
+            //var promise = document.getElementById("audio").play();
+            setTimeout(() => {
+
+                document.querySelector("#audio").play();
+
+            }, 2000)
+
+            /*
+                        if (promise !== undefined) {
+                            promise.then(_ => {
+                                // Autoplay started!
+                            }).catch(error => {
+                                // Autoplay was prevented.
+                                // Show a "Play" button so that user can start playback.
+                            });
+                        }
+            
+            */
+        }
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jogos</title>
+
+    <script>
+        var textos = [
+            {
+                descripton: "The Legend of Zelda ,é uma série de jogos eletrônicos da Nintendo criada em 1986 por Shigeru Miyamoto e Takashi Tezuka. Os jogos se passam no reino de Hyrule, num ambiente de fantasia. A jogabilidade mistura aventura e ação com elementos diversos. A série é muito apreciada por suas tramas complexas, quebra-cabeças, jogabilidade e pela superprodução. O protagonista é o jovem herói Link cuja missão é proteger o reino de Hyrule e a Triforce, a relíquia deixada pelas Deusas criadoras do mundo, capaz de realizar desejos trazendo ao mundo uma era de harmonia e prosperidade, mas que também poderia destruí-lo caindo em mãos erradas. Cada um dos triângulos tem uma virtude diferente, sendo elas, Coragem, Sabedoria e Poder. O principal antagonista da série é Ganon(Ganondorf Dragmire). Porém conforme o tempo que os jogos foram evoluindo, se estabeleceu na mitologia, uma grande guerra contra o mal, trazendo novos vilões a tona.",
+                audio: "Zelda Main Theme Song.mp3"
+            },
+            {
+                descripton: "Super Mario World, originalmente chamado no Japão de Super Mario Bros. 4  é um jogo de plataforma desenvolvido e publicado pela Nintendo como um título que acompanhava o console Super Nintendo Entertainment System. O jogo foi lançado em 1990 no Japão e em 1991 na América do Norte. Super Mario World se tornou um enorme sucesso crítico e comercial, sendo considerado o mais bem-vendido da plataforma, com 20 milhões de cópias vendidas no mundo todo.",
+                audio: "./Musica de Super Mario Bros - Tema Principal.mp3"
+            },
+            {
+                descripton: "Metroid é uma série de videogames da Nintendo. A história se passa num cenário de ficção científica, inspirado nos filmes Alien e centrado na caçadora de recompensas Samus Aran,A personagem principal em todos os jogos é Samus Aran, considerada a melhor caçadora de recompensas da galáxia. Ela usa uma armadura criada pelos homens passaros Chozo.Metroid foi lançado para o Nintendo Entertainment System (NES) em 1986, introduzindo Samus Aran (que se tornou uma grande surpresa para os jogadores ao se revelar mulher) e outros personagensNenhum Metroid foi desenvolvido para o Nintendo 64 (exceto pela participação da protagonista Samus em Super Smash Bros.), e alguns perderam fé na continuação da série. Mas a Nintendo anunciou em 2000 que Retro Studios",
+                audio: "./Theme of Super Metroid - Super Metroid.mp3"
+            }
+        ]
+
+        var idx = 0;
+        function carrossel() {
+
+            if (idx === 3) {
+                idx = 0
+            }
+
+            showImage(idx);
+
+            idx++
+
+        }
+
+        function ChamarCarrosselAutomaticamente() {
+
+
+            setInterval(function () {
+                carrossel()
+            }, 3000)
+        }
+        
+        function chamaManualmente(){
+            carrossel()
+        }
+
+        function showImage(idx) {
+
+            document.querySelectorAll(".item")[0].setAttribute("class", "item")
+            document.querySelectorAll(".item")[1].setAttribute("class", "item")
+            document.querySelectorAll(".item")[2].setAttribute("class", "item")
+
+            document.querySelectorAll(".item")[idx].setAttribute("class", "item activated")
+//debugger
+            document.querySelector("#paragrafo").textContent = textos[idx].descripton
+            document.querySelector("#audio source").src = textos[idx].audio
+            document.querySelector("#audio").load()
+        }
+
+
+
+    </script>
+
+
+
+</head>
+
+<style>
+    #header {
+        background-color: black;
+        max-width: 100%;
+        height: 250px;
+
+    }
+
+    #webmusic {
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-size: 60px;
+        width: 100px;
+        height: 100%;
+        color: whitesmoke;
+        padding-left: 60px;
+    }
+
+    .topicos li {
+
+        display: inline;
+        padding: 100px;
+    }
+
+    #topicos {
+
+        font-size: 20px;
+        color: whitesmoke;
+        padding-top: 130px;
+
+    }
+
+    a:visited,
+    a:active,
+    a:hover,
+    a:focus,
+    a:focus-within,
+    a {
+        color: white;
+        text-decoration: unset;
+
+    }
+
+
+    .item {
+        text-align: center;
+        display: none;
+
+    }
+
+    .item>img {
+        object-fit: cover;
+
+
+    }
+
+
+    .activated {
+        display: block;
+
+    }
+
+    .carousel-control {
+        height: 200px;
+
+
+    }
+
+    article {
+        margin-top: 150px;
+        margin-left: 170px;
+
+    }
+
+    #paragrafo {
+
+        font-family: Arial, Helvetica, sans-serif;
+
+
+    }
+
+    .clearfix::after {
+        content: "";
+        margin-top: 80px;
+        clear: both;
+        display: table;
+    }
+
+    #quadrado {
+        border: solid black 5px;
+        right: 0;
+        position: fixed;
+        bottom: 193px;
+        top: 360px;
+        width: 200px;
+        padding-right: 500px;
+    }
+</style>
+
+
+<body onload="chamaManualmente()">
+
+    <header id="header">
+
+        <a href="./index.html" id="webmusic"> Web Music</a>
+        <img style="height: 50px;" src="./guitarra.png" alt="" />
+
+        <div id="topicos" class="topicos">
+            <ul>
+                <li>
+                    <a href="">Noticias</a></li>
+                <li>
+                    <a href="">Lançamentos</a></li>
+                <li>
+                    <a href="">Top 10 Artistas e Musicas</a></li>
+                <li>
+                    <a href="./jogos.html">Trila sonora dos games</a></li>
+            </ul>
+        </div>
+
+
+
+
+    </header>
+
+    <article class="clearfix">
+
+        <div id="myCarousel" class="carousel slide clearfix" data-ride="carousel">
+
+            <!-- Wrapper for slides -->
+            <div class="carousel-control" style="float:left;">
+                <div style="height:100%;" class="item activated">
+                    <img height="350px" width="250px" src="./link.jpg" />
+                </div>
+
+                <div class="item" style="height: 100%;">
+                    <img height="350px" width="250px" src="./mario.jpeg" alt="Chicago" />
+                </div>
+
+                <div class="item" style="height: 100%;">
+                    <img height="350px" width="250px" src="./samus.png" alt="New York" />
+                </div>
+            </div>
+
+
+        </div>
+        <div style="float:right; margin-left:300px;margin-right: 350px" id="quadrado">
+            <p id="paragrafo" style="position:absolute">
+
+
+
+            </p>
+
+            <audio style="position:absolute;bottom: 0%;right: 0%" id="audio" controls loop autoplay="true">
+
+
+                <source src="" type="audio/mpeg"> Your browser does not support the audio element.
+                </source>
+            </audio>
+
+<button style="position:absolute;bottom:0;left:0;" onclick="chamaManualmente()">Próximo</button>
+        </div>
+        
+    </article>
+
+</body>
+
+</html>
